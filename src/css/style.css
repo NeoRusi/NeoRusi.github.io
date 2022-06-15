@@ -110,7 +110,7 @@ nav{
     padding-top: 40px;
 }
 .pg3_yellowchert{
-      display:block;
+    display:block;
     margin: 16px 920px;
     
 }
@@ -125,8 +125,10 @@ nav{
     margin-top:3px;
 }
 .table1{
+ 
 }
 .el1{
+
 }
 el2{
     
@@ -168,4 +170,63 @@ el4{
 .page3_foot{
     text-align: center;
  
+}
+.page6{
+    width:100%;
+    height: auto;
+    background:url(../Images/pg6_bg.jpg) no-repeat;
+}
+.page6 h2{
+    text-align: center;
+    font-size: 32px;
+    font-weight: bold;
+    color:#263244;
+    padding-top:20px;
+}
+.pg6_yellowchert{
+    display:block;
+    margin: 16px 920px;
+}
+.page6 h4{
+    font-size:30px;
+    color: #323e4f;
+}
+.page7{
+    height:600px;
+    width: 100%;
+    background: #fcfdfd;
+}
+.page7 h2{
+      color: #263244;
+    font-weight:bold;
+    font-size: 42px;
+    text-align:center;
+    margin-top: 109px;
+}
+.pg7_yellowchert{
+    display:block;
+    margin: 16px 915px;
+    
+}
+.pg7_boy{
+    display:block;
+    margin:60px 890px;
+}
+.page7 h4{
+    line-height: 20px;
+    font-size:18px;
+    color:#3f495a;
+    text-align: center;
+}
+.page7 h5{
+    margin-top: 16px;
+    line-height: 20px;
+    font-size:18px;
+    color:#3f495a;
+    text-align: center;
+    
+}
+
+.page9 img{
+    width:100%;
 }

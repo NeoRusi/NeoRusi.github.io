@@ -107,13 +107,26 @@ nav{
     font-size: 22px;
     font-weight: bold;
     color:#263244;
-    margin-top: 150px;
+    padding-top: 40px;
+}
+.pg3_yellowchert{
+      display:block;
+    margin: 16px 920px;
+    
+}
+.page3 h4{
+    font-size:14px;
+    color:#d58b43;
+    margin-top:3px;
+}
+.page3 h6{
+    font-size:10px;
+    color:#616876; 
+    margin-top:3px;
 }
 .table1{
-    
 }
 .el1{
-    
 }
 el2{
     
@@ -126,7 +139,6 @@ el4{
 }
 .page4{
     width:100%;
-    height:1010px;
     background:none;
     margin-bottom: 10px;
     
@@ -151,6 +163,7 @@ el4{
 .pg4_site_photo{
     display:block;
     margin-top: 25px;
+    padding-bottom:50px;
 }
 .page3_foot{
     text-align: center;

@@ -116,12 +116,12 @@ nav{
     
 }
 .page3 h4{
-    font-size: 20px;
+    font-size: 23px;
     color:#d58b43;
-    margin-top:3px;
+    margin-top:10px;
 }
 .page3 h6{
-    font-size:10px;
+    font-size:15px;
     color:#616876; 
     margin-top:3px;
 }
@@ -313,6 +313,91 @@ nav{
     
 }
 
+.page8{
+    height:800px;
+    width:100%;
+    background: url(../Images/pg8_background.png) center/cover no-repeat ;
+}
+.page8 h2{
+    padding-top: 25px;
+    font-size: 40px;
+    text-align: center;
+    color: #ffffff;
+    
+}
+.pg8_yellowchert{
+    margin:10px 910px;
+}
+.page8 span{
+    font-size:15px;
+    color:#e9e9ea;
+    text-align:center;
+}
+.pg8_el_text{
+    font-size:15px;
+    line-height: 17px;
+    color:#e9e9ea;
+    margin: 10px 20px 0px 0px;
+}
+.pg8_table{
+    display:block;
+    margin :20px 580px;
+    width:80%;
+    height: 90px;
+}
+.pg8_table_el{
+    float:left;
+    margin: 20px 100px  0px 100px;
+}
+.pg8_table2{
+    display:block;
+    margin: 10px 580px ;
+    width:850px;
+}
+.page8 h4{
+    color:#ffffff;
+    text-align:center;
+    font-size: 20px;
+    text-transform: uppercase;
+    margin: 5px 100px 5px 0px;
+    
+}
+.Email{
+    margin: 10px 0px 10px 0px;
+    float:right;
+    width:350px;
+    height: 30px;
+}
+.name8{
+    margin: 10px 0px 10px 0px;
+    float:left;
+    width:350px;
+    height: 30px;
+}
+.pg8_message{
+    width:100%;
+    height: 95px;
+    float:left;
+}
+.pg8_footer{
+    background: none;
+    border: 3px solid;
+    color:#f9faff;
+    border-radius: 5px;
+    line-height:40px;
+    font-size:20px;
+    margin: 100px 870px 0px;
+}
+
 .page9 img{
     width:100%;
+}
+footer{
+    width:100%;
+    height: 96px;
+    background: #354051;
+    font-size:16px;
+    color:#ffffff;
+    text-align:center;
+    padding :40px;
 }

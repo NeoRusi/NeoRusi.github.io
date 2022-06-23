@@ -1,0 +1,10 @@
+body{
+    padding:50px;
+    font-family:Arial,sans-serif;
+}
+.main_block{
+    border: 2px solid red;
+    max-width:800px;
+    height:800px;
+    margin:0 auto;
+}

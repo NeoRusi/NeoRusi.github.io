@@ -5,8 +5,24 @@
     <title>Кулиев Руслан Веб-Разработчик </title>
     <link rel="stylesheet" href="css/reset.css">
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
 </head>
 <body>
+   <div class="preloader">
+  <div class="preloader__row">
+    <div class="preloader__item"></div>
+    <div class="preloader__item"></div>
+  </div>
+</div>
+    <script>
+  window.onload = function () {
+    document.body.classList.add('loaded_hiding');
+    window.setTimeout(function () {
+      document.body.classList.add('loaded');
+      document.body.classList.remove('loaded_hiding');
+    }, 500);
+  }
+    </script>
     <header>
         <nav>
     <div class="logo">Кулиев Руслан</div>
@@ -39,13 +55,13 @@
 </div>
 <div class="page3"> 
     <div class="table2">
-        <h2 >Что я умею</h2>
-    <img class="pg3_yellowchert" src="Images/pg3_yellowchert.png">  
+        <h2 class="animate__animated animate__backInLeft" >Что я умею</h2>
+    <img class="pg3_yellowchert animate__animated animate__backInLeft" src="Images/pg3_yellowchert.png">  
     <div class="table2"></div>
-        <div class="table2_el"> <img src="Images/%D0%BD%D0%BE%D1%83%D1%82.png" alt ="Картинка Компьютера"> <h4>Веб дизайн</h4><br><h6>Lorem ipsum dolor sit amet, .<br> Obcaecati  dolor cum similique<br> quia vel assumenda consequuntur natus!</h6></div>
-        <div class="table2_el"> <img src="Images/%D0%B7%D0%BD%D0%B0%D0%BA.png" alt ="Картинка скобочки"> <h4>Разработка</h4><br><br><h6>Lorem ipsum dolor sit amet, .<br> Obcaecati  dolor cum similique<br> quia vel assumenda consequuntur natus!</h6></div>
-        <div class="table2_el"> <img src="Images/%D1%80%D0%B0%D0%BA%D0%B5%D1%82%D0%B0.png" alt ="Картинка ракеты"> <h4>CEO-Оптимизация</h4><br><br><h6>Lorem ipsum dolor sit amet, .<br> Obcaecati  dolor cum similique<br> quia vel assumenda consequuntur natus!</h6></div>
-        <div class="table2_el"> <img src="Images/%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BE%D1%84%D0%BE%D0%BD.png" alt ="Картинка Рупорра"> <h4>Маркетинг</h4><br><h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Obcaecati et, quasi blanditiis unde dolorem ut eveniet, dolor cum similique<br></h6></div>
+        <div class="table2_el animate__animated  animate__backInLeft"> <img src="Images/%D0%BD%D0%BE%D1%83%D1%82.png" alt ="Картинка Компьютера"> <h4>Веб дизайн</h4><br><h6>Lorem ipsum dolor sit amet, .<br> Obcaecati  dolor cum similique<br> quia vel assumenda consequuntur natus!</h6></div>
+        <div class="table2_el animate__animated animate__backInLeft"> <img src="Images/%D0%B7%D0%BD%D0%B0%D0%BA.png" alt ="Картинка скобочки"> <h4>Разработка</h4><br><br><h6>Lorem ipsum dolor sit amet, .<br> Obcaecati  dolor cum similique<br> quia vel assumenda consequuntur natus!</h6></div>
+        <div class="table2_el animate__animated animate__backInLeft"> <img src="Images/%D1%80%D0%B0%D0%BA%D0%B5%D1%82%D0%B0.png" alt ="Картинка ракеты"> <h4>CEO-Оптимизация</h4><br><br><h6>Lorem ipsum dolor sit amet, .<br> Obcaecati  dolor cum similique<br> quia vel assumenda consequuntur natus!</h6></div>
+        <div class="table2_el animate__animated animate__backInLeft"> <img src="Images/%D0%B3%D1%80%D0%B0%D0%BC%D0%BC%D0%BE%D1%84%D0%BE%D0%BD.png" alt ="Картинка Рупорра"> <h4>Маркетинг</h4><br><h6>Lorem ipsum dolor sit amet, consectetur adipisicing elit.<br> Obcaecati et, quasi blanditiis unde dolorem ut eveniet, dolor cum similique<br></h6></div>
 </div>
 </div>
  <div class="page4">
@@ -102,8 +118,8 @@
      
       </div></div>
   <div class="page6">
-      <div class="pg6_table">
-      <h2>немного статистики</h2>
+      <div class="pg6_table parallax">
+      <h2 >немного статистики</h2>
       <img class="pg6_yellowchert" src="Images/pg6_yellowchert.png">
        <div class="l1"> <img src="Images/pg6_smile.png" alt ="Смайлик"><br> <h4>600</h4><br><h6>Счастливых клиентов</h6></div>
        <div class="l1"> <img src="Images/pg6_brackets.png" alt ="Скобочка"><br> <h4>520</h4><br><h6>Часов работы</h6></div>

@@ -1,3 +1,65 @@
+.preloader {
+  /*фиксированное позиционирование*/
+  position: fixed;
+  /* координаты положения */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* фоновый цвет элемента */
+  background: #e0e0e0;
+  /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+  z-index: 1001;
+}
+.preloader__row {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+.preloader__item {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  background-color: #337ab7;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  animation: preloader-bounce 2s infinite ease-in-out;
+}
+.preloader__item:last-child {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes preloader-bounce {
+
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+.loaded .preloader {
+  display: none;
+}
 nav{
     width:100%;
     height: 68px;
@@ -18,7 +80,7 @@ nav{
 }
 .menu{
     float: left;
-    padding-left: 432px;
+    padding-left: 232px;
     
 }
 .menu li{
@@ -73,8 +135,8 @@ main{
     color:#f49d07;
     
 }
-.menu li a:visited{
-    color:white;
+.menu li a:active{
+    color:#f49d07;
     transform: scale(1,1);
     
 }  
@@ -165,9 +227,9 @@ main{
     font-size: 42px;
     text-align:center;
     margin-top: 109px;
-    -webkit-animation:pg2_apearing 3s ease-out forwards ;
-    -o-animation:pg2_apearing 3s ease-out forwards ;
-    animation:pg2_apearing 3s ease-out forwards ;
+    -webkit-animation:pg2_apearing 3s ease-out forwards,pg2_y_move 3s ease-out forwards ;
+    -o-animation:pg2_apearing 3s ease-out forwards,pg2_y_move 3s ease-out forwards ;
+    animation:pg2_apearing 3s ease-out forwards,pg2_y_move 3s ease-out forwards ;
     opacity: 0;
     -webkit-animation-delay: 0.3s;
     -o-animation-delay: 0.3s;
@@ -254,6 +316,17 @@ main{
     }
     to{ opacity: 1;
     }
+}
+@keyframes pg2_y_move{
+    from{
+        margin-top: 129px;
+        
+    }
+    to{
+        margin-top: 109px;
+        
+    }
+    
 }
 
 .page3{
@@ -411,6 +484,9 @@ main{
     width:100%;
     background:url(../Images/pg6_bg.jpg) center no-repeat;
     height:300px;
+    perspective: 1px;
+    overflow-x: hidden;
+    overflow-y: auto;
 }
 .page6 h2{
     text-align: center;
@@ -439,6 +515,25 @@ main{
     text-align: center;
     margin: 3px 36px;
     
+}
+.parallax {
+  perspective: 1px;
+  height: 100vh;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+.parallax__layer {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+}
+.parallax__layer--base {
+  transform: translateZ(0);
+}
+.parallax__layer--back {
+  transform: translateZ(-1px);
 }
 
 .page7{
@@ -482,6 +577,10 @@ main{
     height:800px;
     width:100%;
     background: url(../Images/pg8_background.png) center/cover no-repeat ;
+    -webkit-animation:pg8_apear 3s 2s ease-in forwards ;
+    -o-animation:pg8_apear 3s 2s ease-in forwards ;
+    animation:pg8_apear 3s 2s ease-in forwards ;
+    opacity: 0;
 }
 .page8 h2{
     padding-top: 25px;
@@ -507,8 +606,7 @@ main{
 }
 .pg8_table{
     display:block;
-    margin :20px 480px;
-    width:80%;
+    margin :20px 300px;
     height: 90px;
 }
 .pg8_table_el{
@@ -517,7 +615,7 @@ main{
 }
 .pg8_table2{
     display:block;
-    margin: 10px 480px ;
+    margin: 30px 320px ;
     width:850px;
 }
 .page8 h4{
@@ -552,7 +650,7 @@ main{
     border-radius: 5px;
     line-height:40px;
     font-size:20px;
-    margin: 100px 830px 0px;
+    margin: 100px 660px;
     padding:0px 5px 0px 5px;
     transform:scale(1);
 }
@@ -561,6 +659,15 @@ main{
 }
 .pg8_footer:active{
     transform:scale(1.1,1.1)
+}
+@keyframes pg8_apear{
+    from{
+        opacity: 0;
+        
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .page9 img{

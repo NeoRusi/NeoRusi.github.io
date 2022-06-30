@@ -1,3 +1,65 @@
+.preloader {
+  /*фиксированное позиционирование*/
+  position: fixed;
+  /* координаты положения */
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  /* фоновый цвет элемента */
+  background: #e0e0e0;
+  /* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) */
+  z-index: 1001;
+}
+.preloader__row {
+  position: relative;
+  top: 50%;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  margin-top: -35px;
+  margin-left: -35px;
+  text-align: center;
+  animation: preloader-rotate 2s infinite linear;
+}
+.preloader__item {
+  position: absolute;
+  display: inline-block;
+  top: 0;
+  background-color: #337ab7;
+  border-radius: 100%;
+  width: 35px;
+  height: 35px;
+  animation: preloader-bounce 2s infinite ease-in-out;
+}
+.preloader__item:last-child {
+  top: auto;
+  bottom: 0;
+  animation-delay: -1s;
+}
+@keyframes preloader-rotate {
+  100% {
+    transform: rotate(360deg);
+  }
+}
+@keyframes preloader-bounce {
+
+  0%,
+  100% {
+    transform: scale(0);
+  }
+
+  50% {
+    transform: scale(1);
+  }
+}
+.loaded_hiding .preloader {
+  transition: 0.3s opacity;
+  opacity: 0;
+}
+.loaded .preloader {
+  display: none;
+}
 nav{
     width:100%;
     height: 68px;
@@ -18,7 +80,7 @@ nav{
 }
 .menu{
     float: left;
-    padding-left: 432px;
+    padding-left: 232px;
     
 }
 .menu li{
@@ -28,25 +90,25 @@ nav{
     margin-right:40px;
     font-size:16px;
     text-transform: uppercase;
-    -webkit-animation:topshift 0,4s ease forwards;
-    -o-animation:topshift 0,4s ease forwards ;
-    animation:topshift 0,4s ease forwards;
+    -webkit-animation:topshift 0.4s ease forwards;
+    -o-animation:topshift 0.4s ease forwards ;
+    animation:topshift 0.4s ease forwards;
     opacity:0;
 }
 .menu li a:nth-child(2){
-    animation-delay: 0,4s;
+    animation-delay: 0.4s;
     
 }
 .menu li a:nth-child(3){
-    animation-delay: 0,8s;
+    animation-delay: 0.8s;
     
 }
 .menu li a:nth-child(4){
-    animation-delay: 1,2s;
+    animation-delay: 1.2s;
     
 }
 .menu li a:nth-child(5){
-    animation-delay: 1,6s;
+    animation-delay: 1.6s;
     
 }
 .menu li a:nth-child(6){
@@ -63,17 +125,18 @@ main{
     background: url(../Images/%D0%9F%D0%B0%D1%80%D0%B5%D0%BD%D1%8C.png) 90% 100%/ auto 85% no-repeat, url(../Images/bg.jpg) center/cover no-repeat; 
 }
 .menu li a{
-    transition:all 0,1s;
+    transition:all 0.1s;
     color:white;
     transform: scale(1);
     display: inline-block;
+    margin-right: 20px;
 }
 .menu li a:hover{
     color:#f49d07;
     
 }
-.menu li a:visited{
-    color:white;
+.menu li a:active{
+    color:#f49d07;
     transform: scale(1,1);
     
 }  
@@ -86,9 +149,9 @@ main{
     -webkit-animation:titlemove 1s ease forwards;
     -o-animation:titlemove 1s ease forwards;
     animation:titlemove 1s ease forwards; 
-    -webkit-animation-delay: 2,4s;
-    -o-animation-delay: 2,4s;
-    animation-delay:2,4s;
+    -webkit-animation-delay: 2.4s;
+    -o-animation-delay: 2.4s;
+    animation-delay:2.4s;
 }
 .title_container h1{
     font-size:60px;
@@ -154,6 +217,9 @@ main{
     height:600px;
     width: 100%;
     background: #fcfdfd;
+    -webkit-animation:pg2_apearing 3s ease-out forwards ;
+    -o-animation:pg2_apearing 3s ease-out forwards ;
+    animation:pg2_apearing 3s ease-out forwards ;
 }
 .page2 h2{
     color: #263244;
@@ -161,20 +227,48 @@ main{
     font-size: 42px;
     text-align:center;
     margin-top: 109px;
+    -webkit-animation:pg2_apearing 3s ease-out forwards,pg2_y_move 3s ease-out forwards ;
+    -o-animation:pg2_apearing 3s ease-out forwards,pg2_y_move 3s ease-out forwards ;
+    animation:pg2_apearing 3s ease-out forwards,pg2_y_move 3s ease-out forwards ;
+    opacity: 0;
+    -webkit-animation-delay: 0.3s;
+    -o-animation-delay: 0.3s;
+    animation-delay: 0.3s;
 }
 .yellow_bar{
     display:block;
     margin: 16px auto;
+    -webkit-animation:pg2_apearing 3s ease-out forwards ;
+    -o-animation:pg2_apearing 3s ease-out forwards ;
+    animation:pg2_apearing 3s ease-out forwards ;
+     -webkit-animation-delay: 0.6s;
+    -o-animation-delay: 0.6s;
+    animation-delay: 0.6s;
+       opacity: 0;
  }
 .boy{
     display:block;
     margin:60px auto;
+    -webkit-animation:pg2_apearing 3s ease-out forwards ;
+    -o-animation:pg2_apearing 3s ease-out forwards ;
+    animation:pg2_apearing 3s ease-out forwards ;
+    -webkit-animation-delay: 0.9s;
+    -o-animation-delay: 0.9s;
+    animation-delay: 0.9s;
+       opacity: 0;
 }
 .pg2_txt1{
     line-height: 20px;
     font-size:18px;
     color:#3f495a;
     text-align: center;
+    -webkit-animation:pg2_apearing 3s ease-out forwards ;
+    -o-animation:pg2_apearing 3s ease-out forwards ;
+    animation:pg2_apearing 3s ease-out forwards ;
+    -webkit-animation-delay: 1.2s;
+    -o-animation-delay: 1.2s;
+    animation-delay: 1.2s;
+    opacity: 0;
 }
 .pg2_txt2{
     margin-top: 16px;
@@ -182,6 +276,13 @@ main{
     font-size:18px;
     color:#3f495a;
     text-align: center;
+    -webkit-animation:pg2_apearing 3s ease-out forwards ;
+    -o-animation:pg2_apearing 3s ease-out forwards ;
+    animation:pg2_apearing 3s ease-out forwards ;
+     -webkit-animation-delay: 1.5s;
+    -o-animation-delay: 1.5s;
+    animation-delay: 1.5s;
+    opacity: 0;
 }
 .page2 input{
     background: none;
@@ -190,6 +291,14 @@ main{
     margin: 20px auto;
     display: block;
     padding: 0px 5px 0px 5px;
+    -webkit-animation:pg2_apearing 3s ease-out forwards ;
+    -o-animation:pg2_apearing 3s ease-out forwards ;
+    animation:pg2_apearing 3s ease-out forwards ;
+     -webkit-animation-delay: 1.8s;
+    -o-animation-delay: 1.8s;
+    animation-delay: 1.8s;
+    opacity: 0;
+    transform: scale(1);
 }
 .page2 input:hover{
     background: #344051;
@@ -197,15 +306,32 @@ main{
     
 }
 .page2 input:active{
-    color:#f49d07;
-    transform:scale(1.1,1.1)
+    color:#2eced4;
+    transform:scale(1.1)
     
 }
-.page2 input:visited{}
+@keyframes pg2_apearing{
+    from{
+        opacity: 0;
+    }
+    to{ opacity: 1;
+    }
+}
+@keyframes pg2_y_move{
+    from{
+        margin-top: 129px;
+        
+    }
+    to{
+        margin-top: 109px;
+        
+    }
+    
+}
 
 .page3{
     background: url("../Images/pg3_bg.jpg") no-repeat;
-    height:500px;
+    height:600px;
 }
 .page3 h2{
     text-align: center;
@@ -267,12 +393,10 @@ main{
 }
 .pg4_site_photo{
     display:block;
-    margin:15px 320px 15px;
+    margin:15px auto;
 }
 .page4_foot{
     text-align: center;
-    margin:0px 320px 200px ;
-    
 }
 .bl1{
     float:left;
@@ -431,6 +555,10 @@ main{
     height:800px;
     width:100%;
     background: url(../Images/pg8_background.png) center/cover no-repeat ;
+    -webkit-animation:pg8_apear 3s 2s ease-in forwards ;
+    -o-animation:pg8_apear 3s 2s ease-in forwards ;
+    animation:pg8_apear 3s 2s ease-in forwards ;
+    opacity: 0;
 }
 .page8 h2{
     padding-top: 25px;
@@ -456,18 +584,16 @@ main{
 }
 .pg8_table{
     display:block;
-    margin :20px 480px;
-    width:80%;
+    margin :20px 300px;
     height: 90px;
 }
 .pg8_table_el{
     float:left;
     margin: 20px 100px  0px 100px;
 }
-
 .pg8_table2{
     display:block;
-    margin: 10px 480px ;
+    margin: 30px 320px ;
     width:850px;
 }
 .page8 h4{
@@ -502,15 +628,24 @@ main{
     border-radius: 5px;
     line-height:40px;
     font-size:20px;
-    margin: 100px 830px 0px;
+    margin: 100px 660px;
     padding:0px 5px 0px 5px;
     transform:scale(1);
 }
 .pg8_footer:hover{
-    color:#f49d07;
+    color:#2eced4;
 }
 .pg8_footer:active{
     transform:scale(1.1,1.1)
+}
+@keyframes pg8_apear{
+    from{
+        opacity: 0;
+        
+    }
+    to{
+        opacity: 1;
+    }
 }
 
 .page9 img{

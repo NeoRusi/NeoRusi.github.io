@@ -154,9 +154,10 @@ main{
 }  
 .title_container{
     float:left;
-    margin: 432px 0px 0px 404px;
     color: #2c384a ;
     text-align: center;
+    width: 100%;
+    font-weight: 600;
     opacity:0;
     -webkit-animation:titlemove 1s ease forwards;
     -o-animation:titlemove 1s ease forwards;
@@ -164,6 +165,11 @@ main{
     -webkit-animation-delay: 2.4s;
     -o-animation-delay: 2.4s;
     animation-delay:2.4s;
+}
+
+    
+    
+    
 }
 .title_container h1{
     font-size:60px;
@@ -221,7 +227,7 @@ main{
     }
     to{
         opacity:1;
-        margin-left:404px;
+        margin-left:0px;
     }
 }
 
@@ -696,3 +702,25 @@ footer{
     text-align:center;
     padding :40px;
 }
+@media (max-width: 991px){
+    .title_container, title_container h4 title_container input{
+        color:white;
+        position:relative;
+        z-index: 3;
+    }
+    .main{
+        position: relative;
+    }
+    .main::after{
+        content="";
+        bottom:0;
+        top:0;
+        left:0;
+        right:0;
+        position:absolute;
+        background: rgba(0,0,0,0,0.4)
+        
+    }
+    title_container input{
+        border: 2px solid #ffffff;
+    }}

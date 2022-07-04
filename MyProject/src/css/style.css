@@ -60,6 +60,18 @@
 .loaded .preloader {
   display: none;
 }
+
+@font-face {
+	font-family: 'FranklinGothic';
+	src: url('../fonts/FRABK.eot');
+	src: local('☺'), url('../fonts/FRABK.woff') format('woff'), url('../fonts/FRABK.ttf') format('truetype'), url('../fonts/FRABK.svg') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+body{
+    font-family: Arial,sans-serif;
+}
 nav{
     width:100%;
     height: 68px;
@@ -69,9 +81,9 @@ nav{
 }
 .logo{
     color:#fff;
+    font-family: 'FranklinGothic', sans-serif;
     font-size: 28px;
     line-height: 60px;
-    padding-left: 388px;
     float: left;
     -webkit-animation: comming 2s ease;
     -o-animation:comming 2s ease ;
@@ -80,7 +92,6 @@ nav{
 }
 .menu{
     float: left;
-    padding-left: 232px;
     
 }
 .menu li{
@@ -115,6 +126,7 @@ nav{
     animation-delay: 2s;
     
 }
+
 main{
     width: 100%;
     height: 100%;
@@ -487,6 +499,7 @@ main{
     perspective: 1px;
     overflow-x: hidden;
     overflow-y: auto;
+    background-attachment: fixed;
 }
 .page6 h2{
     text-align: center;

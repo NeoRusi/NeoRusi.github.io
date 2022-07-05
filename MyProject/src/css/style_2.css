@@ -368,8 +368,11 @@ main{
 .table2{
     width: 100%;
 }
+.page3 h6{
+    font-size:10px;
+    color:#616876; 
+}
 .table2_el{
-    float: left;
     text-align: center;
 }
 
@@ -388,9 +391,6 @@ main{
     display:block;
     margin: 16px auto;
     
-}
-.bl1{
-    float:left;
 }
 .page4 h3{
     color: #384354;
@@ -414,11 +414,20 @@ main{
     transform:scale(1.1,1.1)
 }
 
-
 .page5{
+    width:100%;
     height: auto;
+    background: #ffffff;
 }
-
+.calculation{
+    box-shadow: 0px 0px 8px 0px rgba(34, 60, 80, 0.2);
+}
+.page5 h2{
+    text-align:center;
+    color:#1c2534;
+    font-size:40px;
+    font-weight:bold;
+}
 
 .page6{
     width:100%;
@@ -470,7 +479,7 @@ main{
 }
 
 .page7{
-    height:100%;
+    height:auto;
     width: 100%;
     background: #fcfdfd;
 }
@@ -505,6 +514,72 @@ main{
     
 }
 
+.page8{
+    height:100%;
+    width:100%;
+    background: url(../Images/pg8_background.png) center/cover no-repeat ;
+    -webkit-animation:pg8_apear 3s 2s ease-in forwards ;
+    -o-animation:pg8_apear 3s 2s ease-in forwards ;
+    animation:pg8_apear 3s 2s ease-in forwards ;
+    opacity: 0;
+}
+.page8 h2{
+    font-size: 40px;
+    text-align: center;
+    color: #ffffff;
+}
+.pg8_yellowchert{
+    display:block;
+    margin:10px auto;
+}
+.page8 span{
+    font-size:15px;
+    color:#e9e9ea;
+    text-align:center;
+}
+.pg8_el_text{
+    font-size:15px;
+    line-height: 17px;
+    color:#e9e9ea;
+     margin-top: 20px;
+}
+.name8{
+    margin-right: 10px;
+}
+.page8 h4{
+    color:#ffffff;
+    text-transform: uppercase;
+}
+.pg8_message{
+    height:auto;
+}
+.pg8_footer{
+    display:block;
+    background: none;
+    border: 3px solid;
+    color:#f9faff;
+    border-radius: 5px;
+    line-height:40px;
+    font-size:20px;
+    margin:auto;
+    padding:0px 5px 0px 5px;
+    transform:scale(1);
+}
+.pg8_footer:hover{
+    color:#2eced4;
+}
+.pg8_footer:active{
+    transform:scale(1.1,1.1)
+}
+@keyframes pg8_apear{
+    from{
+        opacity: 0;
+        
+    }
+    to{
+        opacity: 1;
+    }
+}
 @media (max-width: 991px){
     .title_container h1, title_container h4, title_container input{
         color:white;

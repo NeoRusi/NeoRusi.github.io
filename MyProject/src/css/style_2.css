@@ -551,7 +551,7 @@ main{
     text-transform: uppercase;
 }
 .pg8_message{
-    height:auto;
+    height:100px;
 }
 .pg8_footer{
     display:block;

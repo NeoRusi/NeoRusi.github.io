@@ -3,13 +3,18 @@
 let dezing = prompt("Выберите тип сайта 1 - Шаблонный 2 - Уникальный 3 - WOW-Дизайн","напишите число");
 let adaptivity = prompt("Выберите тип сайта 1 - Пк 2 - Мобильный 3 - ПК + Мобильный","напишите число");*/
 
+// Скролл менюшки 
+$('a[href= "#" ]').click(function() {
+    let valueHref = $(this).attr("href");
+    $('html,body,').animate({scrollTop:$(valueHref).offset().top - 100 + "px"}); 
+};)
 // Получаем значения переменных
 function inputPage5(){
 let typeSite,dezing,adaptivity; 
 $('select').click( (typeSite,dezing,adaptivity) => {
-    typeSite = $('option').attr('number');
-    dezing = $('option').attr('number');
-    adaptivity = $('option').attr('number');
+    typeSite = $(this).attr('number');
+    dezing = $(this).attr('number');
+    adaptivity = $(this).attr('number');
 };)
 // Создали объект
 let totalCost = {
@@ -136,6 +141,8 @@ function outputPage5(summCost, sumDays){
   $('digit').text(sumDays,"дней")    
 };
 outputPage5();
+
+
 
 
 

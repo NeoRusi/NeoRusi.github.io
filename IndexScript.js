@@ -6,12 +6,13 @@ let adaptivity = prompt("Выберите тип сайта 1 - Пк 2 - Моб�
 // Скролл менюшки 
 $('a[href^="#"]').click(function() {
     let valHref = $(this).attr("href");
-    $('html,body,').animate({scrollTop:$(valHref).offset().top - 50 + "px"}); 
-};)
+    $('html,body').animate({scrollTop:$(valHref).offset().top - 50 + "px"}); 
+});
 //Увеличение картинок слайдера
 $(document).ready(function() {
   $('.image-link').magnificPopup({type:'image'});
-})
+});
+//Отложенные анимации
 // Получаем значения переменных
 function inputPage5(){
 let typeSite,dezing,adaptivity; 
@@ -19,7 +20,7 @@ $('select').click( (typeSite,dezing,adaptivity) => {
     typeSite = $(this).attr('number');
     dezing = $(this).attr('number');
     adaptivity = $(this).attr('number');
-};)
+});
 // Создали объект
 let totalCost = {
     days :[
@@ -37,19 +38,19 @@ let totalCost = {
 function typeSiteCost(typeSite){
     if((typeSite-1) == 0){
         return totalCost.cost[0][0];
-    };
+    }
     else if((typeSite-1) == 1){
         return totalCost.cost[0][1];
-    };
+    }
     else if ((typeSite-1) == 2){
         return totalCost.cost[0][2];
-    };
+    }
     else {
         alert(" Такого ответа быть не может");
         typeSiteCost();
         return; 
     }
-};
+}
 function dezingCost(dezing){
     if((dezing-1) == 0){
         return totalCost.cost[1][0];
@@ -66,41 +67,41 @@ function dezingCost(dezing){
         return; 
     }
     
-};
+}
 function adaptivityCost(adaptivity){
     if((adaptivity-1) == 0){
         return totalCost.cost[2][0];
-    };
+    }
     else if((adaptivity-1) == 1){
         return totalCost.cost[2][1];
-    };
+    }
     else if ((adaptivity-1) == 2) {
         return totalCost.cost[2][2];
-    };
+    }
     else {
         alert(" Такого ответа нет ");
         adaptivityCost();
         return;
-    };
-};
+    }
+}
 let summCost = typeSiteCost() + dezingCost() + adaptivityCost();
 // Подсчет количества дней
 function typeSiteDays(typeSite){
     if((typeSite-1) == 0){
         return totalCost.days[0][0];
-    };
+    }
     else if((typeSite-1) == 1){
         return totalCost.days[0][1];
-    };
+    }
     else if ((typeSite-1) == 2){
         return totalCost.days[0][2];
-    };
+    }
     else {
         alert(" Такого ответа быть не может");
         typeSiteCost();
         return; 
     }
-};
+}
 function dezingDays(dezing){
     if((dezing-1) == 0){
         return totalCost.days[1][0];
@@ -117,25 +118,25 @@ function dezingDays(dezing){
         return; 
     }
     
-};
+}
 function adaptivityDays(adaptivity){
     if((adaptivity-1) == 0){
         return totalCost.days[2][0];
-    };
+    }
     else if((adaptivity-1) == 1){
         return totalCost.days[2][1];
-    };
+    }
     else if ((adaptivity-1) == 2) {
         return totalCost.days[2][2];
-    };
+    }
     else {
         alert(" Такого ответа нет ");
         adaptivityCost();
         return;
-    };
-};
+    }
+}
 let sumDays = typeSiteDays() + dezingDays() + adaptivityDays();
-};
+}
 // Выводим значения
 inputPage5();
 function outputPage5(summCost, sumDays){
@@ -143,7 +144,7 @@ function outputPage5(summCost, sumDays){
   $('digit').empty();
   $('text').text(summCost,"рублей");
   $('digit').text(sumDays,"дней")    
-};
+}
 outputPage5();
 
 

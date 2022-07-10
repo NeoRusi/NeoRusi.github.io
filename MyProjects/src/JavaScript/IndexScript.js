@@ -4,10 +4,14 @@ let dezing = prompt("Выберите тип сайта 1 - Шаблонный 2
 let adaptivity = prompt("Выберите тип сайта 1 - Пк 2 - Мобильный 3 - ПК + Мобильный","напишите число");*/
 
 // Скролл менюшки 
-$('a[href= "#" ]').click(function() {
-    let valueHref = $(this).attr("href");
-    $('html,body,').animate({scrollTop:$(valueHref).offset().top - 100 + "px"}); 
+$('a[href^="#"]').click(function() {
+    let valHref = $(this).attr("href");
+    $('html,body,').animate({scrollTop:$(valHref).offset().top  "px"}); 
 };)
+//Увеличение картинок слайдера
+$(document).ready(function() {
+  $('.image-link').magnificPopup({type:'image'});
+})
 // Получаем значения переменных
 function inputPage5(){
 let typeSite,dezing,adaptivity; 

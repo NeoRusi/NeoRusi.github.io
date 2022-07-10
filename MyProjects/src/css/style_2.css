@@ -122,23 +122,23 @@ nav{
         margin:0px;
     }
 }
-.menu li a:nth-child(2){
+.menu li:nth-child(2){
     animation-delay: 0.4s;
     
 }
-.menu li a:nth-child(3){
+.menu li:nth-child(3){
     animation-delay: 0.8s;
     
 }
-.menu li a:nth-child(4){
+.menu li:nth-child(4){
     animation-delay: 1.2s;
     
 }
-.menu li a:nth-child(5){
+.menu li:nth-child(5){
     animation-delay: 1.6s;
     
 }
-.menu li a:nth-child(6){
+.menu li:nth-child(6){
     animation-delay: 2s;
     
 }
@@ -165,7 +165,7 @@ main{
 }
 .menu li a:active{
     color:#f49d07;
-    transform: scale(1,1);
+    transform: scale(1.1);
     
 }  
 .title_container{

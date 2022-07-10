@@ -13,14 +13,23 @@ $(document).ready(function() {
   $('.image-link').magnificPopup({type:'image'});
 });
 //Отложенные анимации
-// Получаем значения переменных
-function inputPage5(){
-let typeSite,dezing,adaptivity; 
-$('select').click( (typeSite,dezing,adaptivity) => {
-    typeSite = $(this).attr('number');
-    dezing = $(this).attr('number');
-    adaptivity = $(this).attr('number');
+let options ={thresHold:[0.5]};
+let observer = new IntersectionObserver(onEntry,options);
+let elements = $('.element-animation');
+elements.each((i,el) =>{
+    observer.observe(el);
 });
+function onEntry(entry) {
+    entry.forEach(change = >{
+        if (change.isIntersecting){
+        }
+        
+    });
+}
+// Получаем значения переменных
+let typeSite = $(this).attr('number')
+let dezing = $(this).attr('number')
+let adaptivity = $(this).attr('number')
 // Создали объект
 let totalCost = {
     days :[
@@ -136,12 +145,8 @@ function adaptivityDays(adaptivity){
     }
 }
 let sumDays = typeSiteDays() + dezingDays() + adaptivityDays();
-}
 // Выводим значения
-inputPage5();
 function outputPage5(summCost, sumDays){
-  $('text').empty();
-  $('digit').empty();
   $('text').text(summCost,"рублей");
   $('digit').text(sumDays,"дней")    
 }

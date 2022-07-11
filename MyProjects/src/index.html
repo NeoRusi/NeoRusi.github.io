@@ -143,24 +143,24 @@
      <h2>Расчет стоимости</h2>
       <h4 class="offset-1">Тип сайта</h4>
       <select class="col-10 offset-1">
-          <option>Выберите пункт</option>
-          <option number = "1">Сайт визитка</option>
-          <option number = "2">Корпоративный сайт</option>
-          <option number = "3"> Интернет магазин</option>
+          <option class="typeSite"  number ="0">Выберите пункт</option>
+          <option class="typeSite" number = "1">Сайт визитка</option>
+          <option class="typeSite" number = "2">Корпоративный сайт</option>
+          <option class="typeSite" number = "3"> Интернет магазин</option>
       </select>
       <h4 class="offset-1">Дизайн</h4>
       <select class="col-10 offset-1 ">
-          <option>Выберите пункт</option>
-          <option number ="1">Шаблонный</option>
-          <option number = "2">Уникальный</option>
-          <option number ="3"> WOW-Дизайн</option>
+          <option class="dezing" number="0">Выберите пункт</option>
+          <option class="dezing" number ="1">Шаблонный</option>
+          <option class="dezing" number ="2">Уникальный</option>
+          <option class="dezing" number ="3"> WOW-Дизайн</option>
      </select>
       <h4 class="offset-1">Адаптивность</h4>
       <select class="col-10 offset-1">
-          <option>Выберите пункт</option>
-          <option number="1">Только Пк</option>
-          <option number="2">Только Мобильный</option>
-          <option number = "3"> Пк + Мобильный</option>
+          <option number="0" class="adaptivity">Выберите пункт</option>
+          <option number="1"  class="adaptivity">Только Пк</option>
+          <option number="2"  class="adaptivity">Только Мобильный</option>
+          <option number = "3"  class="adaptivity"> Пк + Мобильный</option>
       </select>
       <img class="pg5_underline offset-1 col-10" src="Images/pg5_underline.png">
                     <div class="days offset-1">
@@ -189,12 +189,43 @@
     </div>
       
 </div>
-<div class="page7" id="page7">
+<div class="page7" id="page7">  
+     <div id="carouselExampleFade" class="carousel slide carousel-fade" data-bs-ride="carousel">
+  <div class="carousel-inner">
+    <div class="carousel-item active">
+       
       <h2 class="animate__animated animate__fadeInBottomRight">Отзывы</h2>
       <img class="pg7_yellowchert animate__animated animate__fadeInBottomRight"src="Images/pg7_yellowchert.png" >
        <img class=" pg7_boy animate__animated animate__fadeInBottomRight" src="Images/pg7_boy.png" alt="Фото_мужика">
       <h4 class="animate__animated animate__fadeInBottomRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum sunt sed rem,<br> nisi possimus excepturi commodi nulla fugiat minima eaque non nihil labore, iste.</h4>
       <h5 class="animate__animated animate__fadeInBottomRight">Имя,должность,кампания</h5>
+    </div>
+    <div class="carousel-item">
+      
+      <h2 class="animate__animated animate__fadeInBottomRight">Отзывы</h2>
+      <img class="pg7_yellowchert animate__animated animate__fadeInBottomRight"src="Images/pg7_yellowchert.png" >
+       <img class=" pg7_boy animate__animated animate__fadeInBottomRight" src="Images/pg7_boy.png" alt="Фото_мужика">
+      <h4 class="animate__animated animate__fadeInBottomRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum sunt sed rem,<br> nisi possimus excepturi commodi nulla fugiat minima eaque non nihil labore, iste.</h4>
+      <h5 class="animate__animated animate__fadeInBottomRight">Имя,должность,кампания</h5>
+    </div>
+    <div class="carousel-item">
+      
+      <h2 class="animate__animated animate__fadeInBottomRight">Отзывы</h2>
+      <img class="pg7_yellowchert animate__animated animate__fadeInBottomRight"src="Images/pg7_yellowchert.png" >
+       <img class=" pg7_boy animate__animated animate__fadeInBottomRight" src="Images/pg7_boy.png" alt="Фото_мужика">
+      <h4 class="animate__animated animate__fadeInBottomRight">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorum sunt sed rem,<br> nisi possimus excepturi commodi nulla fugiat minima eaque non nihil labore, iste.</h4>
+      <h5 class="animate__animated animate__fadeInBottomRight">Имя,должность,кампания</h5>
+    </div>
+  </div>
+  <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleFade"  data-bs-slide="prev">
+    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Предыдущий</span>
+  </button>
+  <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleFade"  data-bs-slide="next">
+    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    <span class="visually-hidden">Следующий</span>
+  </button>
+</div>
   </div>
 <div class="page8 activeMenu" id="page8">
       <div class="container">

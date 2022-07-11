@@ -28,24 +28,34 @@ $(window).scroll(() => {
 $(document).ready(function() {
     $('.image-link').magnificPopup({type:'image'});
 });
-/*Отложенные анимации
-let options ={thresHold:[0.5]};
-let observer = new IntersectionObserver(onEntry,options);
-let elements = $('.element-animation');
-elements.each((i,el) =>{
-    observer.observe(el);
+//Отложенные анимации
+
+
+// Ввели переменные
+let typeSite = $('.typeSite').attr("number");
+let dezing = $('.dezing').attr("number");
+let adaptivity = $('.adaptivity').attr("number");
+
+
+// Проверка
+$('.page5').mouseleave(()=> {
+    let typeSite = $('.typeSite').attr("number");
+    let dezing = $('.dezing').attr("number");
+    let adaptivity = $('.adaptivity').attr("number");
+     console.log(typeSite,dezing,adaptivity);
 });
-function onEntry(entry) {
-    entry.forEach(change =>{
-        if (change.isIntersecting){
-        }
-        
-    });
-}*/
-// Получаем значения переменных
-let typeSite = $(this).attr('number');
-let dezing = $(this).attr('number');
-let adaptivity = $(this).attr('number');
+
+
+
+
+
+
+
+
+
+
+
+
 // Создали объект
 let totalCost = {
     days :[
@@ -138,14 +148,10 @@ function outputPage5(summCost, sumDays){
 }
 outputPage5();
 // Рекламка 
-$('page9').mouseenter(() => {
+$('footer').mouseenter(function(){
     alert(" Подожди не уходи на первый заказ скидка 15%");
-    console.log("Works");
+    console.log("Works"); 
 });
-$('page9').mouseleave(() => {
-    return;
-});
-
 
 
 

@@ -515,7 +515,7 @@ main{
 }
 
 .page8{
-    height:100%;
+    height:auto;
     width:100%;
     background: url(../Images/pg8_background.png) center/cover no-repeat ;
     -webkit-animation:pg8_apear 3s 2s ease-in forwards ;
@@ -569,7 +569,7 @@ main{
     color:#2eced4;
 }
 .pg8_footer:active{
-    transform:scale(1.1,1.1)
+    transform:scale(1.1,1.1);
 }
 @keyframes pg8_apear{
     from{
@@ -579,6 +579,15 @@ main{
     to{
         opacity: 1;
     }
+}
+footer{
+    width:100%;
+    height: 96px;
+    background: #354051;
+    font-size:16px;
+    color:#ffffff;
+    text-align:center;
+    padding :40px;
 }
 @media (max-width: 991px){
     .title_container h1, title_container h4, title_container input{

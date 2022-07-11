@@ -1,42 +1,48 @@
 "use strict"
-/*let typeSite = prompt("Выберите тип сайта 1 - LendingPage 2 - Коорпоративный сайт 3 - Онлайн Магазин","напишите число");
-let dezing = prompt("Выберите тип сайта 1 - Шаблонный 2 - Уникальный 3 - WOW-Дизайн","напишите число");
-let adaptivity = prompt("Выберите тип сайта 1 - Пк 2 - Мобильный 3 - ПК + Мобильный","напишите число");*/
-
 // Якорные ссылки 
 $('a[href^="#"]').click(function() {
         let valHref = $(this).attr("href");
-        console.log( "It works");
         $('html, body').animate({scrollTop:$(valHref).offset().top - 75 + "px"}); 
 });
-// Активное меню
-$(window).scroll(() => {
-    let scrollDistance = $(window).scrollTop();
-       $('.activeMenu').each((i,el) => {
-        if($(el).offset().top - $('nav').outerHeight <= scrollDistance){
-            $('nav a').each((i, el) =>{
-                if($(el).hasClass("active")){
-                    $(el).removeClass("active");
-                }  
-            })
-            $('nav li:eq('+ i +')').find('a').addClass('active');
-            
-        }
-    })
-});
+    //Анимация активных ссылок в меню 
+           $(window).scroll(() => {
+               let scrollDistance = $(window).scrollTop();
+
+
+               $('.section').each((i, el) => {
+
+                   if ($(el).offset().top - $('nav').outerHeight() <= scrollDistance) {
+                       $('nav a').each((i, el) => {
+                           if ($(el).hasClass('active')) {
+                               $(el).removeClass('active');
+                           }
+                       });
+
+                       $('nav li:eq(' + i + ')').find('a').addClass('active');
+                   }
+
+               });
+           });
 //Увеличение картинок слайдера
-$(document).ready(function() {
-    $('.image-link').magnificPopup({type:'image'});
-});
+ $('.image-link').magnificPopup({type:'image'});
 //Отложенные анимации
-
-
+let options = {threHold:[0.5]};
+let observer = new IntersectionObserver(onEntry,options);
+let elements = $('.element-animation');
+elements.each((i,el) => {
+    observer.observe(el);
+});
+ function onEntry(entry){
+     entry.forEach(change =>{
+         if (change.isIntersecting){
+             change.target.classList.add('show-animation');
+         }
+     });
+ }
 // Ввели переменные
 let typeSite = $('.typeSite').attr("number");
 let dezing = $('.dezing').attr("number");
 let adaptivity = $('.adaptivity').attr("number");
-
-
 // Проверка
 $('.page5').mouseleave(()=> {
     let typeSite = $('.typeSite').attr("number");
@@ -44,18 +50,6 @@ $('.page5').mouseleave(()=> {
     let adaptivity = $('.adaptivity').attr("number");
      console.log(typeSite,dezing,adaptivity);
 });
-
-
-
-
-
-
-
-
-
-
-
-
 // Создали объект
 let totalCost = {
     days :[

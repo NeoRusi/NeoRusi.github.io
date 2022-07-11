@@ -3,16 +3,32 @@
 let dezing = prompt("Выберите тип сайта 1 - Шаблонный 2 - Уникальный 3 - WOW-Дизайн","напишите число");
 let adaptivity = prompt("Выберите тип сайта 1 - Пк 2 - Мобильный 3 - ПК + Мобильный","напишите число");*/
 
-// Скролл менюшки 
+// Якорные ссылки 
 $('a[href^="#"]').click(function() {
-    let valHref = $(this).attr("href");
-    $('html,body').animate({scrollTop:$(valHref).offset().top - 50 + "px"}); 
+        let valHref = $(this).attr("href");
+        console.log( "It works");
+        $('html, body').animate({scrollTop:$(valHref).offset().top - 75 + "px"}); 
+});
+// Активное меню
+$(window).scroll(() => {
+    let scrollDistance = $(window).scrollTop();
+       $('.activeMenu').each((i,el) => {
+        if($(el).offset().top - $('nav').outerHeight <= scrollDistance){
+            $('nav a').each((i, el) =>{
+                if($(el).hasClass("active")){
+                    $(el).removeClass("active");
+                }  
+            })
+            $('nav li:eq('+ i +')').find('a').addClass('active');
+            
+        }
+    })
 });
 //Увеличение картинок слайдера
 $(document).ready(function() {
-  $('.image-link').magnificPopup({type:'image'});
+    $('.image-link').magnificPopup({type:'image'});
 });
-//Отложенные анимации
+/*Отложенные анимации
 let options ={thresHold:[0.5]};
 let observer = new IntersectionObserver(onEntry,options);
 let elements = $('.element-animation');
@@ -20,16 +36,16 @@ elements.each((i,el) =>{
     observer.observe(el);
 });
 function onEntry(entry) {
-    entry.forEach(change = >{
+    entry.forEach(change =>{
         if (change.isIntersecting){
         }
         
     });
-}
+}*/
 // Получаем значения переменных
-let typeSite = $(this).attr('number')
-let dezing = $(this).attr('number')
-let adaptivity = $(this).attr('number')
+let typeSite = $(this).attr('number');
+let dezing = $(this).attr('number');
+let adaptivity = $(this).attr('number');
 // Создали объект
 let totalCost = {
     days :[
@@ -54,11 +70,6 @@ function typeSiteCost(typeSite){
     else if ((typeSite-1) == 2){
         return totalCost.cost[0][2];
     }
-    else {
-        alert(" Такого ответа быть не может");
-        typeSiteCost();
-        return; 
-    }
 }
 function dezingCost(dezing){
     if((dezing-1) == 0){
@@ -70,12 +81,6 @@ function dezingCost(dezing){
     else if ((dezing-1) == 2){
         return totalCost.cost[1][2];
     }
-        else {
-        alert(" Такого ответа быть не может");
-        dezingCost();
-        return; 
-    }
-    
 }
 function adaptivityCost(adaptivity){
     if((adaptivity-1) == 0){
@@ -86,11 +91,6 @@ function adaptivityCost(adaptivity){
     }
     else if ((adaptivity-1) == 2) {
         return totalCost.cost[2][2];
-    }
-    else {
-        alert(" Такого ответа нет ");
-        adaptivityCost();
-        return;
     }
 }
 let summCost = typeSiteCost() + dezingCost() + adaptivityCost();
@@ -105,11 +105,6 @@ function typeSiteDays(typeSite){
     else if ((typeSite-1) == 2){
         return totalCost.days[0][2];
     }
-    else {
-        alert(" Такого ответа быть не может");
-        typeSiteCost();
-        return; 
-    }
 }
 function dezingDays(dezing){
     if((dezing-1) == 0){
@@ -121,11 +116,7 @@ function dezingDays(dezing){
     else if ((dezing-1) == 2){
         return totalCost.days[1][2];
     }
-        else {
-        alert(" Такого ответа быть не может");
-        dezingCost();
-        return; 
-    }
+
     
 }
 function adaptivityDays(adaptivity){
@@ -138,11 +129,6 @@ function adaptivityDays(adaptivity){
     else if ((adaptivity-1) == 2) {
         return totalCost.days[2][2];
     }
-    else {
-        alert(" Такого ответа нет ");
-        adaptivityCost();
-        return;
-    }
 }
 let sumDays = typeSiteDays() + dezingDays() + adaptivityDays();
 // Выводим значения
@@ -151,8 +137,14 @@ function outputPage5(summCost, sumDays){
   $('digit').text(sumDays,"дней")    
 }
 outputPage5();
-
-
+// Рекламка 
+$('page9').mouseenter(() => {
+    alert(" Подожди не уходи на первый заказ скидка 15%");
+    console.log("Works");
+});
+$('page9').mouseleave(() => {
+    return;
+});
 
 
 

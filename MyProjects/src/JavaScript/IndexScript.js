@@ -4,12 +4,12 @@ $('a[href^="#"]').click(function() {
         let valHref = $(this).attr("href");
         $('html, body').animate({scrollTop:$(valHref).offset().top - 75 + "px"}); 
 });
-    //Анимация активных ссылок в меню 
-           $(window).scroll(() => {
+//Анимация активных ссылок в меню 
+$(window).scroll(() => {
                let scrollDistance = $(window).scrollTop();
 
 
-               $('.section').each((i, el) => {
+               $('.activeMenu').each((i, el) => {
 
                    if ($(el).offset().top - $('nav').outerHeight() <= scrollDistance) {
                        $('nav a').each((i, el) => {
@@ -39,108 +39,62 @@ elements.each((i,el) => {
          }
      });
  }
-// Ввели переменные
-let typeSite = $('.typeSite').attr("number");
-let dezing = $('.dezing').attr("number");
-let adaptivity = $('.adaptivity').attr("number");
-// Проверка
-$('.page5').mouseleave(()=> {
-    let typeSite = $('.typeSite').attr("number");
-    let dezing = $('.dezing').attr("number");
-    let adaptivity = $('.adaptivity').attr("number");
-     console.log(typeSite,dezing,adaptivity);
-});
-// Создали объект
-let totalCost = {
-    days :[
-    [1,3,5],
-    [11,13,15],
-    [21,23,25],
-    ], 
-    cost : [
-    [1000,2000,3000],
-    [1000,7000,10000],
-    [1000,2000,3000],
-    ],
-}
-// Подсчет величины цены
-function typeSiteCost(typeSite){
-    if((typeSite-1) == 0){
-        return totalCost.cost[0][0];
-    }
-    else if((typeSite-1) == 1){
-        return totalCost.cost[0][1];
-    }
-    else if ((typeSite-1) == 2){
-        return totalCost.cost[0][2];
-    }
-}
-function dezingCost(dezing){
-    if((dezing-1) == 0){
-        return totalCost.cost[1][0];
-    }
-    else if((dezing-1) == 1){
-        return totalCost.cost[1][1];
-    }
-    else if ((dezing-1) == 2){
-        return totalCost.cost[1][2];
-    }
-}
-function adaptivityCost(adaptivity){
-    if((adaptivity-1) == 0){
-        return totalCost.cost[2][0];
-    }
-    else if((adaptivity-1) == 1){
-        return totalCost.cost[2][1];
-    }
-    else if ((adaptivity-1) == 2) {
-        return totalCost.cost[2][2];
-    }
-}
-let summCost = typeSiteCost() + dezingCost() + adaptivityCost();
-// Подсчет количества дней
-function typeSiteDays(typeSite){
-    if((typeSite-1) == 0){
-        return totalCost.days[0][0];
-    }
-    else if((typeSite-1) == 1){
-        return totalCost.days[0][1];
-    }
-    else if ((typeSite-1) == 2){
-        return totalCost.days[0][2];
-    }
-}
-function dezingDays(dezing){
-    if((dezing-1) == 0){
-        return totalCost.days[1][0];
-    }
-    else if((dezing-1) == 1){
-        return totalCost.days[1][1];
-    }
-    else if ((dezing-1) == 2){
-        return totalCost.days[1][2];
-    }
+    //Загрузка картинок при скролле
+         let optionsImg = {
+            threshold: [0.5]
+        };
+        let observerImg = new IntersectionObserver(onEntryImg, optionsImg);
+        let elementsImg = $('.lazy_image');
 
-    
-}
-function adaptivityDays(adaptivity){
-    if((adaptivity-1) == 0){
-        return totalCost.days[2][0];
+        elementsImg.each((i, el) => {
+            observerImg.observe(el);
+        });
+
+
+        function onEntryImg(entry) {
+            entry.forEach(change => {
+                if (change.isIntersecting) {
+                    change.target.src = change.target.dataset.src;
+                }
+            });
+        }
+
+//Калькулятор
+function calculate(){
+       let sum = parseInt($("#selectSite option:selected").val()) + parseInt($("#selectDesign option:selected").val()) + parseInt($("#selectAdaptive option:selected").val());
+       let days = parseInt($("#selectSite option:selected").attr("days")) + parseInt($("#selectDesign option:selected").attr("days")) + parseInt($("#selectAdaptive option:selected").attr("days"));
+        $(".price .digit").text(sum);
+        $(".days .digit").text(days);
     }
-    else if((adaptivity-1) == 1){
-        return totalCost.days[2][1];
-    }
-    else if ((adaptivity-1) == 2) {
-        return totalCost.days[2][2];
-    }
+    calculate();
+    $("select").on("change", function(){
+       calculate();
+    });
+//Бегающие циферки
+let optionsStat = {
+    threshold: [0.5]
+    };
+let observerStat = new IntersectionObserver(onEntryStat, optionsStat);
+let elementsStat = $('.statAnimation');
+
+elementsStat.each((i, el) => {
+    observerStat.observe(el);
+    });
+
+
+function onEntryStat(entry) {
+    entry.forEach(change => {
+        if (change.isIntersecting) {
+            if(!$('.statAnimation').hasClass("done")){
+                $('.statAnimation').addClass("done");
+                $('.statAnimation').spincrement({
+                    thousandSeparator: "",
+                    duration: 3000
+                    });
+                  }
+                }
+            });
 }
-let sumDays = typeSiteDays() + dezingDays() + adaptivityDays();
-// Выводим значения
-function outputPage5(summCost, sumDays){
-  $('text').text(summCost,"рублей");
-  $('digit').text(sumDays,"дней")    
-}
-outputPage5();
 // Рекламка 
 $('footer').mouseenter(function(){
     alert(" Подожди не уходи на первый заказ скидка 15%");

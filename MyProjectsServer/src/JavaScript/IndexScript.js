@@ -1,6 +1,8 @@
 "use strict"
 //Wow-Js
 new WOW().init(); 
+//Masked input
+$("#inputTel").mask("+7(999) 999-9999");
 // Якорные ссылки 
 $('a[href^="#"]').click(function() {
         let valHref = $(this).attr("href");
@@ -93,6 +95,20 @@ function onEntryStat(entry) {
                 }
             });
 }
+//AJAX
+$('form').submit(function(event){
+    event.preventDefault();
+    $.ajax({
+        type:"POST",
+        url: "php/mail.php",
+        data: $(this).serialize()
+    }).done(function () {
+            $(this).find("input").val("");
+            alert("Успешно отправлено");
+            $('form').trigger("reset");
+            });
+            return false;
+});
 // Рекламка 
 $('footer').mouseenter(function(){
     alert(" Подожди не уходи на первый заказ скидка 15%");

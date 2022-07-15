@@ -424,7 +424,7 @@ main{
 
 .page5{
     width:100%;
-    height: 100%;
+    height:auto;
     background: #ffffff;
 }
 .calculator{
@@ -481,7 +481,7 @@ main{
     background:  url(../img/select.png) 98% 54%/auto no-repeat, #eee;
 }
 .days .price{
-    margin-bottom: 0px;
+    margin-bottom: 10px;
     font-size: 21px;  
 }
 .calculator_footer p{
@@ -495,11 +495,7 @@ main{
     float: right;
 }
 .calculator_footer button{
-    width: 200px;
-    
-    
-    
-    
+    width: 200px; 
 }
 
 .page6{
@@ -586,6 +582,7 @@ main{
     text-align: center;
     
 }
+
 .page8{
     width:100%;
     height: 100%;

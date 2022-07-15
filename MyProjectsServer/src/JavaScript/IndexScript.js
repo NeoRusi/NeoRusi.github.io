@@ -3,6 +3,14 @@
 new WOW().init(); 
 //Masked input
 $("#inputTel").mask("+7(999) 999-9999");
+//Проверка формы
+$('form').submit(function(event){
+    if ($("#inputTel").val( )== "" || $("#inputMail").val() == "" ){
+        event.preventDefault;
+        alert("Вы забыли ввести информацию");
+    }
+                 
+});
 // Якорные ссылки 
 $('a[href^="#"]').click(function() {
         let valHref = $(this).attr("href");
